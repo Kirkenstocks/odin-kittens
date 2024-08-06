@@ -1,0 +1,20 @@
+<% if flash %>
+  <% flash.each do |type, msg| %>
+    <br>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Kittens!</h1>
+
+<ul>
+ <% @kittens.each do |kitten| %>
+   <li>
+     <%= link_to kitten.name, kitten %>
+   </li>
+ <% end %>
+</ul>
+<br><br>
+<%= link_to "Add Kitten", new_kitten_path %> 

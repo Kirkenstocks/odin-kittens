@@ -1,0 +1,22 @@
+<% if flash %>
+  <% flash.each do |type, msg| %>
+    <br>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Is this the kitten you were looking for?</h1>
+
+<h4>Name: <%= @kitten.name %></h4>
+<h4>Age: <%= @kitten.age%> years old</h4>
+<h4>Cuteness: <%= @kitten.cuteness%></h4>
+<h4>Softness: <%= @kitten.softness%></h4>
+<br><br>
+<ul>
+  <li><%= link_to "Edit", edit_kitten_path(@kitten) %></li>
+  <li><%= link_to "Home", root_path %></li>
+  <br>
+</ul>
+<%= button_to "Delete", kitten_path(@kitten), method: :delete, data: { confirm: "Are you sure?" } %>

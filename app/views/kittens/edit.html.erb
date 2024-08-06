@@ -1,0 +1,6 @@
+<h1>Edit Kitten</h1>
+<%= render "form", kitten: @kitten %>
+<br><br>
+<%= button_to "Delete", kitten_path(@kitten), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<%= link_to "Home", root_path %>

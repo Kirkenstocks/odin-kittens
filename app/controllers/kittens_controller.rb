@@ -1,11 +1,23 @@
 class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
+
+    # API to get all kitten data
+    respond_to do |f|
+      f.html
+      f.json { render json: @kittens }
+    end
   end
 
 
   def show
     @kitten = Kitten.find(params[:id])
+
+    # API to get the kitten's data
+    respond_to do |f|
+      f.html
+      f.json { render json: @kitten }
+    end
   end
 
 
